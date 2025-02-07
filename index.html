@@ -7,9 +7,91 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-
+    <link rel="stylesheet" href="styles.css">
 
     <style>
+    
+    /* General Styling */
+body {
+    background: #f0f0f0;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(42, 42, 42, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.pexels.com/photos/3568520/pexels-photo-3568520.jpeg') center/cover;
+    color: white;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+/* Portfolio Items */
+.portfolio-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+/* Contact Section */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+    margin: 0rem;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 2rem;
+}
 
       
 
@@ -912,27 +994,22 @@ body[data-theme='dark'] .dark-mode-toggle i {
 </head>
 <body>
     
-     <button class="back-to-top" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+     <button class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
-     <nav class="navbar">
+   <nav class="navbar">
         <div class="logo">Hadii's Portfolio</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
-            <button class="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
+            <button class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
         </div>
-      
     </nav>
  <section class="hero" id="home">
         <div class="hero-content">
             <h1 class="typewriter">Welcome to My Creative World</h1>
-            <p class="fade-in-delay">Bringing Stories to Life Through Visual Media</p>
+        <p>Bringing Stories to Life Through Visual Media</p>
             <div class="scroll-indicator"></div>
         </div>
     </section>
