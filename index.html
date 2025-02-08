@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,988 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <link rel="stylesheet" href="styles.css">
 
-    <style>
     
-    /* General Styling */
-body {
-    background: #f0f0f0;
-    color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.5s, color 0.5s;
-}
-
-h1, h2 {
-    text-align: center;
-}
-
-/* Navbar */
-.navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(42, 42, 42, 0.95);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-}
-
-.dark-mode-toggle {
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url('https://images.pexels.com/photos/3568520/pexels-photo-3568520.jpeg') center/cover;
-    color: white;
-}
-
-/* Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-}
-
-/* Portfolio Items */
-.portfolio-item {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-8px) scale(1.05);
-}
-
-/* Contact Section */
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0rem;
-    margin: 0rem;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    background: #333;
-    color: white;
-    padding: 2rem;
-}
-
-      
-
-     
-           /* Contact Form Fixes */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-dark);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form button {
-            background: var(--accent-color);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: #ff9f7f;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
-        }
-
-        /* Social Media Links Section */
-        .social-links-section {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem auto;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .social-links-section .contact-item {
-            display: inline-flex;
-            align-items: center;
-            margin: 10px;
-            padding: 10px 20px;
-            border: 2px solid var(--accent-color);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links-section .contact-item:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-5px);
-        }
-    // Mobile Menu
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-        
-         /* Mobile-First CSS Enhancements */
-        :root {
-            --breakpoint-mobile: 768px;
-            --breakpoint-tablet: 1024px;
-        }
-        
-      /* Smooth Global Transitions */
-        * {
-            transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        /* Enhanced Color Scheme */
-        :root {
-            --primary-color: #2a2a2a;
-            --accent-color: #ff7e5f;
-            --light-bg: #ffffff;
-            --dark-bg: #1a1a1a;
-            --text-light: #ffffff;
-            --text-dark: #2a2a2a;
-            --navbar-bg: rgba(42, 42, 42, 0.95);
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --gradient-border: linear-gradient(45deg, #ff7e5f, #feb47b);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        [data-theme="dark"] {
-            --primary-color: #ffffff;
-            --accent-color: #8A2BE2;
-            --light-bg: #1a1a1a;
-            --dark-bg: #2a2a2a;
-            --text-light: #ffffff;
-            --text-dark: #f8f9fa;
-            --navbar-bg: rgba(26, 26, 26, 0.95);
-            --card-bg: rgba(26, 26, 26, 0.9);
-            --gradient-border: linear-gradient(45deg, #8A2BE2, #4B0082);
-        }
-
-        body {
-            background: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Smooth Scroll Behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Navbar Smooth Transitions */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--navbar-bg);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section Smooth Animations */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('https://images.pexels.com/photos/3568520/pexels-photo-3568520.jpeg') center/cover;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1.5s ease-in-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-
-        /* Portfolio Section Smooth Transitions */
-        .portfolio-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(255, 126, 95, 0.4);
-        }
-
-        /* Skills Section Smooth Hover Effects */
-        .skill-item {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(45deg, var(--accent-color), #ff9f7f);
-        }
-
-        /* Contact Section Smooth Animations */
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: 1.2rem;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease-in-out;
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 126, 95, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(255, 126, 95, 0.4);
-        }
-
-        /* Footer Smooth Transitions */
-        .footer {
-            background: var(--navbar-bg);
-            padding: 2rem;
-            text-align: center;
-            color: var(--text-light);
-            margin-top: 4rem;
-        }
-
-        .social-links a {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-/* Back to Top Button Smooth Transition */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent-color);
-    color: white;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 9999; /* Ensures the button is above all other elements */
-}
-
-.back-to-top.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links {
-                margin-top: 1rem;
-            }
-        }
-        
-     /* Enhanced Footer */
-        .footer {
-            background: var(--navbar-bg);
-            padding: 2rem;
-            text-align: center;
-            color: var(--text-light);
-            margin-top: 4rem;
-        }
-
-        .footer p {
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--text-light);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-3px);
-        }
-        
-    /* Scroll Animation Styles */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate-on-scroll.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Optimized Portfolio Grid */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Portfolio Item Optimizations */
-.portfolio-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s, opacity 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-/* Smooth Hover Effect */
-.portfolio-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
-}
-
-/* Lazy Load Images & Videos */
-img, video {
-    display: block;
-    width: 100%;
-    height: auto;
-    will-change: opacity;
-    transition: opacity 0.3s ease-in-out;
-}
-
-/* Fade In Lazy Loaded Media */
-.lazyload {
-    opacity: 0;
-}
-.lazyloaded {
-    opacity: 1;
-}
-        :root {
-            --primary-color: #2a2a2a;
-            --accent-color: #ff7e5f;
-            --light-bg: #ffffff;
-            --dark-bg: #1a1a1a;
-            --text-light: #ffffff;
-            --text-dark: #2a2a2a;
-            --navbar-bg: rgba(42, 42, 42, 0.95);
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --gradient-border: linear-gradient(45deg, #ff7e5f, #feb47b);
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        [data-theme="dark"] {
-            --primary-color: #ffffff;
-            --accent-color: #8A2BE2;
-            --light-bg: #1a1a1a;
-            --dark-bg: #2a2a2a;
-            --text-light: #ffffff;
-            --text-dark: #f8f9fa;
-            --navbar-bg: rgba(26, 26, 26, 0.95);
-            --card-bg: rgba(26, 26, 26, 0.9);
-            --gradient-border: linear-gradient(45deg, #8A2BE2, #4B0082);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--navbar-bg);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.5s ease;
-        }
-
-        .navbar .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
-
-        .dark-mode-toggle {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .dark-mode-toggle:hover {
-            transform: rotate(360deg) scale(1.1);
-        }
-        
-        /* Body and Background Color Transition */
-body {
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-
-/* Dark Theme Styles */
-body[data-theme='dark'] {
-    background-color: #121212;
-    color: #ffffff;
-}
-
-/* Light Theme Styles */
-body[data-theme='light'] {
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-/* Smooth Transition for Icon Change */
-.dark-mode-toggle i {
-    transition: transform 0.3s ease;
-}
-
-body[data-theme='dark'] .dark-mode-toggle i {
-    transform: rotate(180deg); /* Rotate icon for smooth flip */
-}
-
-
-       /* Hero Section - Parallax Effect */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.pexels.com/photos/3568520/pexels-photo-3568520.jpeg') center/cover;
-   
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-}
-
-/* Smooth Text Animations */
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    animation: fadeInDown 1.5s ease-in-out;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    animation: fadeInUp 1.5s ease-in-out;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-}
-      /* Portfolio Section - Parallax & Glassmorphism */
-.portfolio-section {
-    padding: 6rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Parallax Background */
-.portfolio-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('your-image.jpg') center/cover no-repeat;
-    opacity: 0.2;
-    z-index: -1;
-    transform: translateY(0);
-    transition: transform 0.3s ease-in-out;
-}
-
-.portfolio-section:hover::before {
-    transform: translateY(-10px);
-}
-
-/* Section Title with Glow Effect */
-.section-title {
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    position: relative;
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Subtle Neon Glow Underline */
-.section-title::after {
-    content: "";
-    width: 80px;
-    height: 3px;
-    background: var(--accent-color);
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-    box-shadow: 0 0 10px var(--accent-color);
-}
-
-/* Filter Buttons - Animated */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.filter-btn {
-    padding: 0.7rem 1.5rem;
-    border: 2px solid var(--accent-color);
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: all 0.4s ease-in-out;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-/* Hover Effect */
-.filter-btn.active, .filter-btn:hover {
-    background: var(--accent-color);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.5);
-}
-
-/* Portfolio Grid - Smooth Layout */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-}
-
-
-/* Portfolio Item - Glassmorphism & Hover Effects */
-.portfolio-item {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.4s, box-shadow 0.4s ease-in-out;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-/* Hover Effect - Lifting & Glow */
-.portfolio-item:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(255, 126, 95, 0.4);
-}
-
-/* Video Styling */
-.portfolio-item video {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
-}
-
-/* Content Area */
-.item-content {
-    padding: 1rem;
-    text-align: center;
-}
-
-/* Title */
-.item-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-}
-
-/* Description */
-.item-content p {
-    font-size: 1rem;
-    color: var(--text-dark);
-    opacity: 0.8;
-}
-
-/* Parallax Effect on Scroll */
-@media (hover: none) {
-    .portfolio-section::before {
-        transform: none;
-    }
-}
-
-
-        /* Skills Section */
-        .skills-section {
-            background: var(--card-bg);
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skills-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .skill-item {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            z-index: 1;
-        }
-
-        .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(45deg, var(--accent-color), #ff9f7f);
-        }
-
-        .skill-item:hover i,
-        .skill-item:hover h3,
-        .skill-item:hover p {
-            color: white;
-        }
-
-        .skill-item i {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .skill-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-             color: black;
-        }
-
-        .skill-item p {
-            font-size: 1rem;
-            color: black;
-            opacity: 0.8;
-        }
-
-    /* Contact Section */
-.contact-section {
-    background: var(--card-bg);
-    padding: 5rem 2rem;
-    text-align: center;
-}
-
-.contact-container {
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.contact-heading {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-}
-
-/* Adding an underline effect below the heading */
-.contact-heading::after {
-    content: "";
-    width: 80px;
-    height: 3px;
-    background: var(--accent-color);
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-}
-
-/* Centering Contact Info */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centers items horizontally */
-    justify-content: center;
-    width: 100%;
-    gap: 1.5rem;
-}
-
-/* Contact Items with Glassmorphism Effect */
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centers content inside */
-    gap: 1rem;
-    font-size: 1.2rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px); /* Glassmorphism effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-}
-
-/* Hover Effect - Glow */
-.contact-item:hover {
-    background: rgba(255, 126, 95, 0.2);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.4);
-}
-
-/* Icon Animation */
-.contact-item i {
-    color: var(--accent-color);
-    font-size: 1.8rem;
-    transition: transform 0.3s ease-in-out;
-    animation: bounce 1.5s infinite alternate ease-in-out;
-}
-
-/* Bouncing Effect */
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-5px);
-    }
-}
-
-.contact-item:hover i {
-    transform: scale(1.3);
-}
-
-/* Contact Links */
-.contact-item a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
-}
-
-/* Hover Effect on Links */
-.contact-item a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links {
-                margin-top: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     
@@ -1003,7 +23,11 @@ body[data-theme='dark'] .dark-mode-toggle i {
             <a href="#portfolio">Portfolio</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
-            <button class="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+            
+            
+
+              <button class="dark-mode-toggle btn-ripple"><i class="fas fa-moon"></i></button>
+            <button class="hamburger btn-ripple"><i class="fas fa-bars"></i></button>
         </div>
     </nav>
  <section class="hero" id="home">
@@ -1155,11 +179,15 @@ body[data-theme='dark'] .dark-mode-toggle i {
     </section>
 
     <section class="contact-section" id="contact">
-        <form class="contact-form">
-            <div class="form-group">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-            </div>
+         <form class="contact-form">
+        <div class="form-group">
+            <input type="text" placeholder=" " required>
+            <label class="floating-label">Name</label>
+        </div>
+        <div class="form-group">
+            <input type="email" placeholder=" " required>
+            <label class="floating-label">Email</label>
+        </div>
             <textarea placeholder="Message" required></textarea>
             <button type="submit">Send Message <i class="fas fa-paper-plane"></i></button>
         </form>
@@ -1241,15 +269,7 @@ darkModeToggle.addEventListener('click', () => {
             });
         });
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                document.querySelector('.navbar').style.background = 'rgba(42, 42, 42, 0.98)';
-            } else {
-                document.querySelector('.navbar').style.background = 'rgba(42, 42, 42, 0.95)';
-            }
-        });
-        
+       
 // Back to Top Button
         const backToTop = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => {
@@ -1347,6 +367,71 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+// Toggle menu when hamburger is clicked
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Hide menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+    }
+});
+
+// Hide menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+    });
+});
+
+ // Enhanced Hamburger Animation
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+        });
+
+        // Ripple Effect Implementation
+        document.querySelectorAll('.btn-ripple').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('div');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '10px';
+                ripple.style.height = '10px';
+                ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.animation = 'ripple 0.6s linear';
+                
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        // Touch Device Detection
+        function isTouchDevice() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints;
+        }
+
+        if(isTouchDevice()) {
+            document.body.classList.add('touch-device');
+        }
 
         
     </script>
